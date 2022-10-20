@@ -1,0 +1,19 @@
+{
+  "name": "aplicacioneswebiii",
+  "version": "1.0.0",
+  "description": "*Actualizaciòn de node* Para actualizar Node en Linux Ubuntu para WSL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristiantech/Aplicaciones-web-III.git"
+  },
+  "author": "Cristian Muñoz <cristiand.munozt@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cristiantech/Aplicaciones-web-III/issues"
+  },
+  "homepage": "https://github.com/cristiantech/Aplicaciones-web-III#readme"
+}

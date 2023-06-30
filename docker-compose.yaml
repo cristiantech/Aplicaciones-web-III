@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      - POSTGRES_DB=sales_frances
+      - POSTGRES_USER=sales_frances
+      - POSTGRES_PASSWORD=SECRET
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgres/data

@@ -20,7 +20,7 @@ Comprender y aplicar los conceptos fundamentales de administración y persistenc
   + Creamos el archivo vercel.js
     ```SH
     {
-      "rewrite":[{
+      "rewrites":[{
           "source": "/api/(.*)",
           "destination": "/api"
         }

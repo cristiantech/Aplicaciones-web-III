@@ -10,7 +10,24 @@ Comprender y aplicar los conceptos fundamentales de administración y persistenc
 + Introducción a PostgreSQL y su importancia en las aplicaciones web.
 + Configuración y gestión de bases de datos PostgreSQL.
 + Uso de Docker para el despliegue y la gestión de entornos de desarrollo con PostgreSQL.
++ vercel
+  + Registrarse con la cuenta de Git HUB
+  + Debe estar en rama main o master
+  + Realizar un merge desde la rama principal a la rama en que estemos trabajando
+  + Generar una carpeta API y mover nuestros archivos
+  + Todas las rutas deben emezar con API
+  + debemos ller el puerto de una variable de ambiente
+  + Creamos el archivo vercel.js
+    ```SH
+    {
+      "rewrite":[{
+          "source": "/api/(.*)",
+          "destination": "/api"
+        }
+      ]
+    }
 
+    ```
 #### Esencialidades de ORM con Sequelize
 
 #### Gestión y administración de consultas

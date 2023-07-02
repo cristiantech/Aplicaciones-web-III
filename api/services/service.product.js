@@ -1,5 +1,6 @@
-const {faker} = require("@faker-js/faker");
+const {faker, th} = require("@faker-js/faker");
 const boom = require('@hapi/boom');
+const pool = require('../libs/postgres.pool');
 
 // Definimos una clase
 class Product{
@@ -7,6 +8,8 @@ class Product{
   constructor(){
     this.product = [];
     this.generate();
+    this.pool = pool;
+    this.pool.on('error', (err) => {throw new Error(err)});
   }
 
   generate(){
@@ -22,13 +25,12 @@ class Product{
     }
   }
 
-  find(){
-    return new Promise((resolve,reject) => {
-      setTimeout(() => {
-        resolve(this.product)
-      }, 5000);
-    });
+  async find(){
+    const query = 'Select * from productos';
+    const rta = await this.pool.query(query);
+    return rta.rows;
   }
+
   async findOne(id){
     const prducto = this.product.find(pr => pr.id === id);
     if(!prducto){

@@ -1,21 +1,21 @@
 const Joi = require('joi');
 
-const id = Joi.string().uuid();
-const name = Joi.string().alphanum().min(10).max(50);
-const precie = Joi.number().integer().min(10);
+const category_id = Joi.number().integer();
+const name = Joi.string().min(8).max(50);
+const description = Joi.string().min(1);
 
 const createSchema = Joi.object({
   name: name.required(),
-  precie: precie.required(),
+  description: description.required(),
 });
 
 const updateSchema = Joi.object({
   name: name,
-  precie: precie,
+  description: description,
 });
 
 const getSchema = Joi.object({
-  id: id.required()
+  category_id: category_id.required()
 });
 
 module.exports = {createSchema, updateSchema, getSchema};
